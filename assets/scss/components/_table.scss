@@ -1,0 +1,14 @@
+@use "../common/mixin";
+@use "../common/variables";
+
+.table {
+    width: 100%;
+    border-spacing: 0;
+
+    tr {
+        th, td {
+            border: none;
+            padding: 0;
+        }
+    }
+}

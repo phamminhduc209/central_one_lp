@@ -1,0 +1,89 @@
+@use 'common/variables';
+@use 'common/mixin';
+
+.p-service {
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+        gap: mixin.rem(32px);
+        margin-top: mixin.rem(32px);
+
+        @include mixin.mq('md', min) {
+            flex-direction: row;
+            gap: mixin.rem(136px);
+            margin-top: mixin.rem(64px);
+            padding-left: mixin.rem(112px);
+        }
+    }
+
+    &__media {
+        border-radius: mixin.rem(6px);
+        overflow: hidden;
+
+        @include mixin.mq('md', min) {
+            flex: 0 0 mixin.rem(312px);
+            max-width: mixin.rem(312px);
+        }
+    }
+
+    &__list {
+        li {
+            @include mixin.mq('md', min) {
+                padding-right: mixin.rem(40px);
+            }
+
+            &:not(:last-child) {
+                border-bottom: 1px solid var(--border-color-base);
+                padding-bottom: mixin.rem(32px);
+                margin-bottom: mixin.rem(32px);
+
+                @include mixin.mq('md', min) {
+                    padding-bottom: mixin.rem(64px);
+                    margin-bottom: mixin.rem(64px);
+                }
+            }
+
+            & > .content {
+                display: flex;
+                flex-direction: column;
+                gap: mixin.rem(12px);
+                margin-top: mixin.rem(5px);
+
+                @include mixin.mq('md', min) {
+                    flex-direction: row;
+                    gap: mixin.rem(101px);
+                    margin-top: mixin.rem(5px);
+                }
+                
+                .hline05 {
+                    @include mixin.mq('md', min) {
+                        flex: 0 0 mixin.rem(236px);
+                        max-width: mixin.rem(236px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.p-security {
+    &__media {
+        margin: mixin.rem(32px) mixin.rem(-112px) 0;
+
+        @include mixin.mq('md', min) {
+            max-width: mixin.rem(760px);
+            margin: mixin.rem(30px) 0 0 auto;
+        }
+    }
+}
+
+.p-reason {
+    &__content {
+        margin-top: mixin.rem(32px);
+
+        @include mixin.mq('md', min) {
+            padding-left: mixin.rem(560px);
+            margin-top: mixin.rem(30px);
+        }
+    }
+}

@@ -1,0 +1,89 @@
+@use "sass:map";
+@use "sass:math";
+// grid
+$grid-gutter-width: 20px !default;
+$container-width: 1320px !default;
+
+$displays: none, block, flex !default;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px) !default;
+
+// Spacing
+$spacer: 1rem !default;
+$spacers: () !default;
+
+@for $i from 0 through 100 {
+  $spacers: map.set($spacers, $i, if($i == 0, 0, $spacer * math.div($i, 10)));
+}
+
+// $spacers: map.merge((0: 0,
+//       5: ($spacer * 0.5),
+//       10: ($spacer * 1),
+//       15: ($spacer * 1.5),
+//       16: ($spacer * 1.6),
+//       20: ($spacer * 2),
+//       30: ($spacer * 3),
+//       32: ($spacer * 3.2),
+//       34: ($spacer * 3.4),
+//       35: ($spacer * 3.5),
+//       45: ($spacer * 4.5),
+//       56: ($spacer * 5.6),
+//       100: ($spacer * 10),
+//       150: ($spacer * 15),
+//     ),
+//     $spacers
+// );
+
+//font
+$font-primary: "heisei-kaku-gothic-std", sans-serif;
+$font-secondary: "Montserrat", sans-serif;
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+$font-size-reset: 10px !default;
+$font-family-base: $font-primary;
+$font-size-base: 14px !default;
+$line-height-base: 1.5;
+$font-weight-base: $font-weight-light;
+
+//color
+$black: #000;
+$white: #fff;
+$gray-100: #1E1E1E;
+$gray-300: rgba(6, 13, 39, 0.5);
+
+$body-color: #060D27;
+$body-bg: #E9EFF5 !default;
+$border-color: rgba(6, 13, 39, 0.1) !default;
+
+// Button
+$btn-disabled-opacity: 0.6;
+$btn-border-width: 1px !default;
+$btn-font-weight: $font-weight-medium;
+$btn-font-family: $font-family-base;
+
+// Table
+$table-th-font-weight: $font-weight-base;
+
+// Form
+$input-height: 50px !default;
+$input-padding-y: 5px !default;
+$input-padding-x: 10px !default;
+$input-font-family: $font-family-base;
+$input-bg: $white;
+$input-border-width: 1px;
+$input-border-color: $border-color;
+$input-color: $black;
+$input-disabled-bg: $gray-100;
+$input-placeholder-color: $gray-300;
+$input-font-size: $font-size-base;
+$input-font-weight: $font-weight-base;
+$input-line-height: 1.5;

@@ -1,0 +1,196 @@
+.animate_animated {
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+    animation-timing-function: ease;
+}
+
+.animate__imageScale {
+    animation-name: imageScale;
+}
+
+@keyframes imageScale {
+    0% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes hover-arrowLR-deg01 {
+    0% {
+        transform: translate(0, 0)
+    }
+
+    100% {
+        transform: translate(100%, 0)
+    }
+}
+
+@keyframes hover-arrowLR-deg02 {
+    0% {
+        transform: translate(-100%, 0)
+    }
+
+    10% {
+        transform: translate(-100%, 0)
+    }
+
+    100% {
+        transform: translate(0, 0)
+    }
+}
+
+@keyframes hover-arrowBlank-deg03 {
+    0% {
+        transform: translate(0, 0)
+    }
+
+    100% {
+        transform: translate(100%, -100%)
+    }
+}
+
+@keyframes hover-arrowBlank-deg04 {
+    0% {
+        transform: translate(-100%, 100%)
+    }
+
+    10% {
+        transform: translate(-100%, 100%)
+    }
+
+    100% {
+        transform: translate(0, 0)
+    }
+}
+
+@keyframes hover-arrowRL-deg05 {
+    0% {
+        transform: translate(0, 0)
+    }
+
+    100% {
+        transform: translate(-100%, 0)
+    }
+}
+
+@keyframes hover-arrowRL-deg06 {
+    0% {
+        transform: translate(100%, 0)
+    }
+
+    10% {
+        transform: translate(100%, 0)
+    }
+
+    100% {
+        transform: translate(0, 0)
+    }
+}
+
+@keyframes hover-arrowBT-deg07 {
+    0% {
+        transform: translate(0, 0)
+    }
+
+    100% {
+        transform: translate(0, -100%)
+    }
+}
+
+@keyframes hover-arrowBT-deg08 {
+    0% {
+        transform: translate(0, 100%)
+    }
+
+    10% {
+        transform: translate(0, 100%)
+    }
+
+    100% {
+        transform: translate(0, 0)
+    }
+}
+
+@keyframes hover-arrowTB-deg09 {
+    0% {
+        transform: translate(0, 0)
+    }
+
+    100% {
+        transform: translate(0, 100%)
+    }
+}
+
+@keyframes hover-arrowTB-deg10 {
+    0% {
+        transform: translate(0, -100%)
+    }
+
+    10% {
+        transform: translate(0, -100%)
+    }
+
+    100% {
+        transform: translate(0, 0)
+    }
+}
+
+@keyframes button-arrow-down {
+    0% {
+        opacity: 1;
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+
+    29% {
+        opacity: 0;
+        -webkit-transform: translate(0, 8px);
+        transform: translate(0, 8px);
+    }
+
+    30% {
+        -webkit-transform: translate(0, -8px);
+        transform: translate(0, -8px);
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+}
+
+.running-txt,
+.running-image {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+
+    &__wrap {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+
+        p {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+@keyframes runningText {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}

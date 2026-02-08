@@ -1,0 +1,93 @@
+@use 'common/variables';
+@use 'common/mixin';
+
+.p-information {
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+
+        @include mixin.mq('md', min) {
+            flex-direction: row;
+            gap: mixin.rem(136px);
+        }
+    }
+
+    &__cate {
+        @include mixin.mq('md', min) {
+            width: mixin.rem(200px);
+        }
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            gap: mixin.rem(10px);
+
+            @include mixin.mq('md', min) {
+                flex-direction: column;
+            }
+
+            li {
+                flex-shrink: 0;
+
+                a {
+                    border: 1px solid rgba(6, 13, 39, 0.1);
+                    border-radius: mixin.rem(3px);
+                    font-size: mixin.rem(15px);
+                    line-height: 1;
+                    display: block;
+                    padding: mixin.rem(15px) mixin.rem(19px);
+
+                    @include mixin.mq('md', min) {
+                        font-size: mixin.fs(16px);
+                        padding: mixin.rem(16px) mixin.rem(20px);
+                    }
+
+                    &:hover, &.is-active {
+                        background-color: var(--color-primary);
+                        border-color: var(--color-primary);
+                        color: var(--color-white);
+                    }
+                }
+            }
+        }
+    }
+
+    &__content {
+        @include mixin.mq('md', min) {
+            flex: 1;
+        }
+
+        @include mixin.mq('md') {
+            margin-top: mixin.rem(56px);
+        }
+    }
+
+    &__year {
+        select {
+            background-color: transparent;
+            border-radius: mixin.rem(3px);
+            color: variables.$body-color;
+            height: mixin.rem(30px);
+
+            @include mixin.mq('md', min) {
+                height: mixin.rem(50px);
+            }
+
+            @include mixin.mq('md') {
+                border: none;
+                max-width: mixin.rem(142px);
+                margin-left: auto;
+            }
+        }
+    }
+}
+
+.c-news {
+    &__item {
+        &:first-child {
+            .c-news__link {
+                padding-top: 0;
+            }
+        }
+    }
+}

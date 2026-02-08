@@ -1,0 +1,55 @@
+@use "../common/mixin";
+@use "../common/variables";
+
+.c-breadcrumb {
+    border-top: 1px solid rgba(6, 13, 39, 0.1);
+    padding-block: mixin.rem(16.5px);
+    margin-top: mixin.rem(100px);
+
+    @include mixin.mq('md', min) {
+        margin-top: mixin.rem(195px);
+        padding-block: mixin.rem(26.5px);
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+    }
+
+    &__item {
+        color: #060D27;
+        font-size: mixin.rem(12px);
+        letter-spacing: .03em;
+        white-space: nowrap;
+        
+        @include mixin.mq('md', min) {
+            font-size: mixin.fs(12px);
+        }
+
+        &:last-child {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            
+            @include mixin.mq('md') {
+                max-width: mixin.rem(210px);
+            }
+        }
+
+        &:not(:last-child) {
+            &::after {
+                background-color: rgba(6, 13, 39, 0.2);
+                border-radius: 50%;
+                display: inline-block;
+                vertical-align: middle;
+                width: mixin.rem(4px);
+                aspect-ratio: 1;
+                content: "";
+                margin: 0 mixin.rem(10px);
+            }
+        }
+    }
+
+    a {
+        color: #060D27;
+    }
+}

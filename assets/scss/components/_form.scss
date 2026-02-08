@@ -1,0 +1,228 @@
+@use "../common/mixin";
+@use "../common/variables";
+
+.form-control {
+    background-color: var(--color-white);
+    background-clip: padding-box;
+    border: var(--input-border-width) solid var(--input-border-color);
+    border-radius: mixin.rem(4px);
+    color: variables.$input-color;
+    display: block;
+    font-family: var(--font-family-base);
+    font-size: var(--input-font-size);
+    font-weight: var(--input-font-weight);
+    line-height: variables.$input-line-height;
+    padding: mixin.rem(variables.$input-padding-y) mixin.rem(variables.$input-padding-x);
+    width: 100%;
+    height: mixin.rem(56px);
+    
+    @include mixin.mq('md', min) {
+        font-size: mixin.fs(16px);
+        height: mixin.rem(64px);
+    }
+
+    // Unstyle the caret on `<select>`s in IE10+.
+    &::-ms-expand {
+        background-color: transparent;
+        border: 0;
+    }
+
+    // Remove select outline from select box in FF
+    &:-moz-focusring {
+        color: transparent;
+        text-shadow: 0 0 0 variables.$input-color;
+    }
+
+    // Placeholder
+    &::placeholder {
+        color: variables.$input-placeholder-color;
+        opacity: 1;
+    }
+
+    &:disabled,
+    &[readonly] {
+        background-color: variables.$input-disabled-bg;
+        opacity: 1;
+    }
+
+    &:focus-visible {
+        outline: none;
+    }
+}
+
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+    &.form-control {
+        appearance: none; // Fix appearance for date inputs in Safari
+    }
+}
+
+textarea {
+    max-width: 100%;
+    min-height: mixin.rem(129px);
+    
+    @include mixin.mq('md', min) {
+        min-height: mixin.rem(256px);
+    }
+}
+
+.custom-select {
+    position: relative;
+
+    select {
+        appearance: none;
+        color: rgba(6, 13, 39, 0.5);
+        cursor: pointer;
+        padding-right: mixin.rem(60px);
+        
+        @include mixin.mq('md', min) {
+            padding-right: mixin.rem(60px);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        option {
+            color: variables.$body-color;
+        }
+    }
+
+    &.is-active {
+        select {
+            color: variables.$body-color;
+        }
+    }
+
+    &__arrow {
+        border-left: 1px solid rgba(6, 13, 39, 0.1);
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: mixin.rem(19px);
+        height: mixin.rem(26px);
+        padding-left: mixin.rem(19px);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        &::after {
+            content: "";
+            background: url('../images/common/icon_arrow05.svg') no-repeat center / cover;
+            width: mixin.rem(10px);
+            height: mixin.rem(6px);
+        }
+    }
+}
+
+.c-checkbox {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: flex-start;
+    font-size: mixin.rem(16px);
+
+    @include mixin.mq('md', min) {
+        font-size: mixin.fs(16px);
+    }
+
+    input {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+
+        &:checked {
+            ~span {
+                background-color: var(--color-primary);
+
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    span {
+        background-color: var(--color-white);
+        border: 1px solid var(--border-color-base);
+        border-radius: mixin.rem(2px);
+        aspect-ratio: 1;
+        margin-right: mixin.rem(8px);
+        width: mixin.rem(20px);
+        position: relative;
+        top: mixin.rem(2px);
+
+        @include mixin.mq('md', min) {
+            margin-right: mixin.rem(6px);
+        }
+
+        &::after {
+            content: '';
+            background: url('../images/common/icon_arrow05_white.svg') no-repeat center / cover;
+            width: mixin.rem(8px);
+            height: mixin.rem(6px);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+        }
+    }
+}
+
+.c-radio {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: flex-start;
+    font-size: mixin.rem(16px);
+
+    @include mixin.mq('md', min) {
+        font-size: mixin.fs(16px);
+    }
+
+    input {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+
+        &:checked {
+            ~span {
+                border: 2px solid var(--color-primary);
+
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    span {
+        background-color: var(--color-white);
+        border: 1px solid var(--border-color-base);
+        border-radius: 50%;
+        aspect-ratio: 1;
+        margin-right: mixin.rem(6px);
+        width: mixin.rem(20px);
+        position: relative;
+        top: mixin.rem(2px);
+
+        &::after {
+            content: '';
+            background-color: var(--color-primary);
+            border-radius: 50%;
+            width: mixin.rem(8px);
+            height: mixin.rem(8px);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+        }
+    }
+}
+
+label.error {
+    color: var(--color-warning);
+    display: block;
+    margin-top: mixin.rem(5px);
+}

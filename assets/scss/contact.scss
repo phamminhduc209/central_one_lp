@@ -1,0 +1,83 @@
+@use 'common/variables';
+@use 'common/mixin';
+
+.p-header {
+    background-color: transparent;
+    border-bottom: none;
+    position: absolute !important;
+    
+    @include mixin.mq('md', min) {
+        padding-block: mixin.rem(29px);
+    }
+    
+    &__logo {
+        @include mixin.mq('md', min) {
+            padding-right: 0;
+        }
+        
+        &::after {
+            display: none;
+        }
+    }
+
+    &__nav, &__hamburger {
+        display: none;
+    }
+}
+
+.p-footer {
+    background-color: transparent;
+    border-top: 1px solid var(--border-color-base);
+    padding-block: mixin.rem(40px);
+
+    @include mixin.mq('md', min) {
+        padding-block: mixin.rem(80px) mixin.rem(70px);
+    }
+
+    &::before, &::after {
+        display: none;
+    }
+
+    .c-direct {
+        display: none;
+    }
+
+    &__wrap {
+        display: none;
+    }
+
+    &__bottom {
+        margin-top: 0;
+        justify-content: space-between;
+
+        &-blank {
+            display: none;
+        }
+
+        .nav {
+            @include mixin.mq('md', min) {
+                margin-left: 0;
+            }
+
+            @include mixin.mq('md') {
+                margin-top: mixin.rem(24px);
+            }
+        }
+    }
+
+    .c-pagetop {
+        display: none;
+    }
+
+    .copyright {
+        display: block;
+    }
+}
+
+.c-content {
+    padding-bottom: mixin.rem(100px);
+
+    @include mixin.mq('md', min) {
+        padding-bottom: mixin.rem(120px);
+    }
+}

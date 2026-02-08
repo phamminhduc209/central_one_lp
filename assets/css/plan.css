@@ -1,0 +1,354 @@
+@media (min-width: 768px) {
+  .p-plan__desc {
+    max-width: 53.6rem;
+    margin-left: auto;
+  }
+}
+.p-plan .pricing {
+  margin-top: 2.4rem;
+}
+@media (min-width: 768px) {
+  .p-plan .pricing {
+    margin-top: 6rem;
+  }
+}
+@media (max-width: 767px) {
+  .p-plan .pricing {
+    background-color: var(--color-white);
+    border-radius: 0.6rem;
+    overflow: hidden;
+  }
+}
+.p-plan .pricing table {
+  table-layout: fixed;
+}
+.p-plan .pricing table tr th, .p-plan .pricing table tr td {
+  position: relative;
+}
+.p-plan .pricing table tr th:first-child, .p-plan .pricing table tr td:first-child {
+  width: 18.6rem;
+}
+.p-plan .pricing table thead tr th:nth-child(2)::before, .p-plan .pricing table thead tr th:nth-child(3)::before {
+  background-color: rgba(6, 13, 39, 0.1);
+  content: "";
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.p-plan .pricing table thead tr th:not(:first-child)::after {
+  background-color: rgba(6, 13, 39, 0.1);
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.p-plan .pricing table tbody tr td {
+  height: 8.8rem;
+}
+.p-plan .pricing table tbody tr td::before {
+  background-color: rgba(6, 13, 39, 0.1);
+  content: "";
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+.p-plan .pricing table tbody tr td::after {
+  background-color: rgba(6, 13, 39, 0.1);
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.p-plan .pricing table tbody tr td.no-before::before {
+  display: none;
+}
+.p-plan .pricing table tbody tr td.no-after::after {
+  display: none;
+}
+.p-plan .pricing table tbody tr td.tb-border::before {
+  background-color: rgba(6, 13, 39, 0.1);
+  content: "";
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -1px;
+  z-index: 1;
+}
+.p-plan .pricing table tbody tr td.rowspan {
+  background-color: var(--color-white);
+}
+.p-plan .pricing table tbody tr td:not(:first-child) {
+  background-color: var(--color-white);
+}
+.p-plan .pricing table tbody tr:first-child .pricing-opt {
+  border-top-left-radius: 0.5rem;
+}
+.p-plan .pricing table tbody tr:last-child td::after {
+  display: none;
+}
+.p-plan .pricing table tbody tr:last-child .pricing-opt {
+  border-bottom-left-radius: 0.5rem;
+}
+.p-plan .pricing table tbody tr:last-child .pricing-cta {
+  border-bottom-right-radius: 0.5rem;
+}
+.p-plan .pricing-header {
+  background-color: var(--color-white);
+  padding: 0.8rem;
+}
+@media (min-width: 768px) {
+  .p-plan .pricing-header {
+    padding: 0.8rem 0.8rem 1rem;
+  }
+}
+@media (max-width: 767px) {
+  .p-plan .pricing-header {
+    border-bottom: 1px solid rgba(6, 13, 39, 0.1);
+  }
+}
+.p-plan .pricing-header__name {
+  background-color: #2C5FBE;
+  border-radius: 0.5rem;
+  position: relative;
+  padding: 2rem 1.6rem;
+}
+@media (min-width: 768px) {
+  .p-plan .pricing-header__name {
+    padding: 2rem 2.6rem 2.4rem;
+  }
+}
+.p-plan .pricing-header__name::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("../images/plan/bg_union_pricing.svg") no-repeat top left/cover;
+}
+.p-plan .pricing-header .c-txt-medium {
+  border-radius: 0.5rem;
+  background-color: #2C5FBE;
+  margin-top: 0.4rem;
+}
+.p-plan .pricing-header--empty {
+  background-color: transparent;
+}
+.p-plan .pricing-header--light {
+  border-top-left-radius: 0.5rem;
+}
+.p-plan .pricing-header--standard .pricing-header__name, .p-plan .pricing-header--standard .c-txt-medium {
+  background-color: #204B9E;
+}
+.p-plan .pricing-header--enterprise {
+  border-top-right-radius: 0.5rem;
+}
+.p-plan .pricing-header--enterprise .pricing-header__name, .p-plan .pricing-header--enterprise .c-txt-medium {
+  background: #092D77;
+}
+.p-plan .pricing-opt {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+@media (min-width: 768px) {
+  .p-plan .pricing-opt {
+    background-color: var(--color-white);
+    font-size: clamp(10px, 1.8rem, 18px);
+    padding: 2rem 1rem 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+.p-plan .pricing-prc {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1;
+}
+@media (min-width: 768px) {
+  .p-plan .pricing-prc {
+    background-color: var(--color-white);
+    font-size: clamp(10px, 1.5rem, 15px);
+    padding: 2rem 1rem 2rem;
+    text-align: center;
+  }
+}
+.p-plan .pricing-prc span {
+  font-size: 3.2rem;
+  letter-spacing: -0.02em;
+  position: relative;
+  top: 0.2rem;
+}
+@media (max-width: 767px) {
+  .p-plan .pricing-prc span {
+    margin-right: 0.3rem;
+  }
+}
+@media (min-width: 768px) {
+  .p-plan .pricing-prc span {
+    font-size: clamp(10px, 4.5rem, 45px);
+  }
+}
+.p-plan .pricing-other {
+  font-weight: 300;
+  line-height: 1.8;
+}
+@media (min-width: 768px) {
+  .p-plan .pricing-other {
+    background-color: var(--color-white);
+    text-align: center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (max-width: 767px) {
+  .p-plan .pricing-other {
+    border-left: 1px solid rgba(6, 13, 39, 0.1);
+    padding: 1.6rem;
+    width: 15.7rem;
+  }
+}
+.p-plan .pricing-cta {
+  background-color: var(--color-white);
+}
+@media (min-width: 768px) {
+  .p-plan .pricing-cta {
+    padding: 3rem;
+  }
+}
+.p-plan .pricing-cta__box {
+  background-color: #E9EFF5;
+  border-radius: 0.6rem;
+  padding: 3.2rem 1.6rem;
+}
+@media (min-width: 768px) {
+  .p-plan .pricing-cta__box {
+    border-radius: 0.5rem;
+    padding: 4.5rem;
+  }
+}
+.p-plan .pricing-cta__ttl {
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+@media (min-width: 768px) {
+  .p-plan .pricing-cta__ttl {
+    font-size: clamp(10px, 2.8rem, 28px);
+  }
+}
+@media (max-width: 767px) {
+  .p-plan .pricing-cta .btn {
+    font-size: 1.4rem;
+  }
+}
+.p-plan .pricing-note {
+  margin-top: 2.5rem;
+}
+.p-plan .pricing-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid rgba(6, 13, 39, 0.1);
+}
+.p-plan .pricing-row--other {
+  padding: 0;
+  align-items: normal;
+}
+.p-plan .pricing-row--other .pricing-other {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.p-plan .pricing-row--cta {
+  padding: 1.6rem;
+}
+.p-plan .pricing-row__empty .pricing-opt {
+  width: 17.8rem;
+  padding: 2rem;
+}
+.p-plan .pricing-row__empty .pricing-opt:not(:last-child) {
+  border-bottom: 1px solid rgba(6, 13, 39, 0.1);
+}
+
+.p-support__content {
+  margin-top: 1.6rem;
+}
+@media (min-width: 768px) {
+  .p-support__content {
+    margin-top: 5rem;
+    padding-left: 22.7rem;
+  }
+}
+.p-support .support {
+  margin-top: 5.6rem;
+}
+@media (min-width: 768px) {
+  .p-support .support {
+    margin-top: 6.4rem;
+  }
+}
+.p-support .support__item:not(:last-child) {
+  border-bottom: 1px solid rgba(6, 13, 39, 0.1);
+  padding-bottom: 6.4rem;
+  margin-bottom: 6.4rem;
+}
+@media (min-width: 768px) {
+  .p-support .support__item:not(:last-child) {
+    padding-bottom: 6.4rem;
+    margin-bottom: 6.4rem;
+  }
+}
+.p-support .support__item-box {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 1rem;
+}
+@media (min-width: 768px) {
+  .p-support .support__item-box {
+    gap: 17.3rem;
+    margin-top: 1.6rem;
+  }
+}
+.p-support .support__item-ttl {
+  font-size: 2.2rem;
+  font-weight: 500;
+  line-height: 1.2;
+  flex: 0 0 13.2rem;
+  max-width: 13.2rem;
+}
+@media (min-width: 768px) {
+  .p-support .support__item-ttl {
+    font-size: clamp(10px, 2.8rem, 28px);
+    flex: 0 0 27.5rem;
+    max-width: 27.5rem;
+  }
+}
+.p-support .support__item .c-txt-medium {
+  line-height: 1.8;
+}
+/*# sourceMappingURL=maps/plan.css.map */

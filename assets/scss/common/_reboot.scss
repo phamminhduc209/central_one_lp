@@ -1,0 +1,231 @@
+@use "mixin";
+@use "variables";
+
+:root {
+	--font-primary: "heisei-kaku-gothic-std", sans-serif;
+	--border-color-base: rgba(6, 13, 39, 0.1);
+	--color-white: #{variables.$white};
+	--color-primary: #204B9E;
+	--color-secondary: #1684DD;
+	--color-warning: #f00;
+	--font-family-base: #{variables.$font-family-base};
+	--font-family-en: #{variables.$font-secondary};
+	--font-weight-base: #{variables.$font-weight-base};
+	--lineheight-base: #{variables.$line-height-base};
+	--font-size-base: #{mixin.rem(14px)};
+	--input-border-color: #{variables.$input-border-color};
+	--input-border-width: #{mixin.rem(variables.$input-border-width)};
+	--input-font-size: #{variables.$input-font-size};
+	--input-font-weight: #{variables.$input-font-weight};
+	--input-background: #{variables.$input-bg};
+	--fade-duration: 700ms;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	letter-spacing: .04em;
+}
+
+html {
+	font-size: calc(10 / 375) * 100vw;
+	
+	&:not(.page-home) {
+		overflow-x: hidden;
+	}
+
+	@include mixin.mq('md', min) {
+		font-size: calc(10 / 1440) * 100vw;
+	}
+
+	&.noscroll {
+		position: fixed;
+		left: 0;
+		right: 0;
+		width: 100%;
+		overflow-y: scroll;
+		overflow-x: hidden;
+	}
+}
+
+.page-home {
+	body {
+		@include mixin.mq('md', min) {
+			overflow: visible;
+		}
+	}
+}
+
+body {
+	background-color: variables.$body-bg;
+	color: variables.$body-color;
+	font-family: var(--font-family-base);
+	font-weight: var(--font-weight-base);
+	font-size: var(--font-size-base);
+	font-feature-settings: 'case' on, 'palt' on;
+	line-height: var(--lineheight-base);
+	text-align: left;
+	position: relative;
+	margin: 0;
+	overflow-x: hidden;
+	opacity: 0;
+
+	@include mixin.mq('md', min) {
+		font-size: mixin.fs(14px);
+	}
+
+	&.fade-ready {
+		opacity: 0;
+		transition: opacity var(--fade-duration) ease;
+	}
+
+	&.is-loaded {
+		opacity: 1;
+	}
+
+	&.is-fading-out {
+		opacity: 0;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body {
+		&.fade-ready { transition: none !important; }
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+}
+
+ol,
+ul,
+dl {
+	list-style-type: none;
+	margin: 0;
+	padding-left: 0;
+}
+
+b,
+strong {
+	font-weight: variables.$font-weight-bold;
+}
+
+a {
+	background-color: transparent; // Remove the gray background on active links in IE 10.
+	color: inherit;
+	text-decoration: none;
+}
+
+img {
+	vertical-align: middle;
+	border-style: none; // Remove the border on images inside links in IE 10-.
+	max-width: 100%;
+	height: auto;
+}
+
+table {
+	border-collapse: collapse; // Prevent double borders
+}
+
+th {
+	font-weight: variables.$table-th-font-weight;
+	text-align: inherit;
+	text-align: -webkit-match-parent;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+	margin: 0; // Remove the margin in Firefox and Safari
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+button,
+input {
+	overflow: visible; // Show the overflow in Edge
+}
+
+button,
+select {
+	text-transform: none; // Remove the inheritance of text transform in Firefox
+}
+
+select {
+	word-wrap: normal;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+	-webkit-appearance: button;
+}
+
+textarea {
+	overflow: auto; // Remove the default vertical scrollbar in IE.
+	// Textareas should really only resize vertically so they don't break their (horizontal) containers.
+	resize: vertical;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+[type="search"] {
+	outline-offset: -2px; // 2. Correct the outline style in Safari.
+	-webkit-appearance: none;
+}
+
+[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+[hidden] {
+	display: none !important;
+}
+
+.aligncenter {
+	text-align: center;
+}
+
+.alignright {
+	text-align: right;
+}
+
+.alignleft {
+	text-align: left;
+}
+
+figure {
+	margin: 0;
+}
+
+img {
+	&.aligncenter {
+		display: block;
+		margin: auto;
+	}
+
+	&.alignright {
+		display: block;
+		margin-left: auto;
+	}
+
+	&.alignleft {
+		display: block;
+		margin-right: auto;
+	}
+}
